@@ -1,7 +1,3 @@
-# privathon2025
-👷 Privathon 2025 workshop
-
----
 # Scenario
 - Suppose that a small marketing firm (let's call them "Oxford Analytica") has collected data on political affiliations
 - For each record, they store the following information:
@@ -20,9 +16,10 @@
 > [!note]
 > Names are generated at random from the wordlists, [`first_names.txt`](wordlists/first_names.txt) and [`last_names.txt`](wordlists/last_names.txt), which were obtained from the 2021 Facebook data leak of 533M users
 > 
-> These wordlists were adapted from [here](https://github.com/philipperemy/name-dataset)
+> These wordlists were adapted from [philipperemy's `name-dataset`](https://github.com/philipperemy/name-dataset)
 
 - Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Bouhala الصول
+- [`driver.py`](utils/driver.py) handles parsing the CSV for you
 - Who is their vote for?
 ### Task 2: Hash Cracking
 - Suppose we want to identify the name of the youngest individual in the dataset who voted "Red"
