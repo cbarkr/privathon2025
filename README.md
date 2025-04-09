@@ -10,7 +10,7 @@
 	3. Age
 	4. Sex
 	5. Vote
-- They've heard about [k-anonymity](https://en.wikipedia.org/wiki/K-anonymity) so they try to anonymize the data like so:
+- Oxford Analytica supposedly cares about privacy, and they've heard about [k-anonymity](https://en.wikipedia.org/wiki/K-anonymity), so they try to anonymize the data like so:
 	1. Suppress identifiers (first name, last name) by hashing them with SHA-256
 	2. Generalize quasi-identifiers (age) by rounding to the nearest 5
 	3. Leaving the sensitive information (vote) untouched since this is necessary for their analysis
