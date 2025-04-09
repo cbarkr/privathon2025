@@ -19,6 +19,7 @@
 ### Task 1: Not So Differentially Private
 > [!note]
 > Names are generated at random from the wordlists, [`first_names.txt`](wordlists/first_names.txt) and [`last_names.txt`](wordlists/last_names.txt), which were obtained from the 2021 Facebook data leak of 533M users
+> 
 > These wordlists were adapted from [here](https://github.com/philipperemy/name-dataset)
 
 - Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Bouhala الصول
