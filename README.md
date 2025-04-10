@@ -9,8 +9,8 @@ By the end of this workshop, you should be able to:
 > A function that maps data of arbitrary size to fixed-size values
 ### Properties of Cryptographic Hash Functions
 1. Pre-image Resistance: Given the output, it is hard to get the original input (i.e. given $hash(m_1)$, it is hard to find $m_1$)
-2. Second Pre-image Resistance: Given one input, it is hard to find another input that produces the same output (i.e. given $m_1$, it is hard to find another $m_2$ such that $m_1 \neq m_2$ and $hash(m_1) = hash(m_2)$)
-3. Collision Resistance: Given It is hard to find two inputs that produce the same output (i.e. it is hard to find $m_1$ and $m_2$ such that $m_1 \neq m_2$ and $hash(m_1) = hash(m_2)$)
+2. Second Pre-image Resistance: Given one input, it is hard to find another input that produces the same output (i.e. given $m_1$, it is hard to find another $m_2$ such that $m_1 \neq m_2$ and hash($m_1$) = hash($m_2$))
+3. Collision Resistance: Given It is hard to find two inputs that produce the same output (i.e. it is hard to find $m_1$ and $m_2$ such that $m_1 \neq m_2$ and hash($m_1$) = hash($m_2$))
 > [!note]
 > Second pre-image resistance and collision resistance differ slightly:
 > - Second Pre-image Resistance: Attacker is given a particular message $m_1$
