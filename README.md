@@ -11,16 +11,15 @@ By the end of this workshop, you should be able to:
 1. Pre-image Resistance: Given the output, it is hard to get the original input (i.e. given $hash(m_1)$, it is hard to find $m_1$)
 2. Second Pre-image Resistance: Given one input, it is hard to find another input that produces the same output (i.e. given $m_1$, it is hard to find another $m_2$ such that $m_1 \neq m_2$ and $hash(m_1) = hash(m_2)$)
 3. Collision Resistance: Given It is hard to find two inputs that produce the same output (i.e. it is hard to find $m_1$ and $m_2$ such that $m_1 \neq m_2$ and $hash(m_1) = hash(m_2)$)
-> [!question]
-> How do second pre-image resistance and collision resistance differ?
+> [!note]
+> Second pre-image resistance and collision resistance differ slightly:
+> - Second Pre-image Resistance: Attacker is given a particular message $m_1$
+> - Collision Resistance: Attacker can freely choose both messages $m_1$ and $m_2$
 
-> [!answer]
-> Second Pre-image Resistance: Attacker is given a particular message $m_1$
-> Collision Resistance: Attacker can freely choose both messages $m_1$ and $m_2$
 ## Hashcat
 > An open-source hash-cracking tool
 
-See [[#Tools]]
+See [Tools](#tools)
 ## K-anonymity
 > A property possessed by certain anonymized data
 > A release of data is said to have the k-anonymity property if the information for each person contained in the release cannot be distinguished from at least $k − 1$ individuals whose information also appear in the release
@@ -41,8 +40,8 @@ See [[#Tools]]
 1. Introduces noise to the data
 2. May still leak information!
 ### Attacks
-	1. Homogeneity Attack: Suppose all members of an anonymity set have the same sensitive value; any person in the anonymity set (i.e. possessing the relevant QIDS) is known to have a certain sensitive value
-	2. Background Knowledge Attack: Leverages an association between one or more QIDs with the sensitive attribute to reduce the set of possible values for the sensitive attribute
+1. Homogeneity Attack: Suppose all members of an anonymity set have the same sensitive value; any person in the anonymity set (i.e. possessing the relevant QIDS) is known to have a certain sensitive value
+2. Background Knowledge Attack: Leverages an association between one or more QIDs with the sensitive attribute to reduce the set of possible values for the sensitive attribute
 # Scenario
 - Suppose that a small marketing firm (let's call them "Oxford Analytica") has collected data on political affiliations
 - For each record, they store the following information:
