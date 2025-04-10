@@ -20,6 +20,7 @@
 > 
 > These wordlists were adapted from [philipperemy's `name-dataset`](https://github.com/philipperemy/name-dataset)
 
+- Suppose that A and B differ by at most one record
 - Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Joaquim Nuno Chenyi
 - [`driver.py`](utils/driver.py) handles parsing the CSV for you
 - Who is their vote for?
@@ -27,7 +28,7 @@
 - Suppose we want to identify the name of the youngest individual in the dataset who voted "Red"
 - Crack the hashes for their first and last name using Hashcat
 - What is their full name?
-### Task 3: When less is more
+### Task 3: When Less Is More
 - How can you correctly anonymize the dataset?
 # Tools
 - [Hashcat](https://hashcat.net/hashcat/)
