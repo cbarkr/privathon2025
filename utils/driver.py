@@ -3,30 +3,21 @@ import csv
 from pathlib import Path
 
 
-def read_from_csv(firstnames_path: Path, lastnames_path: Path):
-	datasetA = []
-	datasetB = []
+def read_from_csv(datasetA: Path, datasetB: Path):
+	with open(datasetA) as csvfile:
+		A = [tuple(row) for row in csv.reader(csvfile, delimiter=",")]
 
-	with open(firstnames_path) as csvfile:
-		reader = csv.reader(csvfile, delimiter=",")
-		for idx, row in enumerate(reader):
-			if idx > 0:
-				datasetA.append(tuple(row))
+	with open(datasetB) as csvfile:
+		B = [tuple(row) for row in csv.reader(csvfile, delimiter=",")]
 
-	with open(lastnames_path) as csvfile:
-		reader = csv.reader(csvfile, delimiter=",")
-		for idx, row in enumerate(reader):
-			if idx > 0:
-				datasetB.append(tuple(row))
-
-	return datasetA, datasetB
+	return A, B
 
 
-def difference_attack(datasetA: list, datasetB: list):
+def difference_attack(A: list, B: list):
 	"""
 	Attack 1: Set differencing
 
-	Suppose datasetA and datasetB differ by only record
+	Suppose dataset A and dataset B differ by only record
 	Also suppose you know the name of the *last* person to be added
 	What is the vote of the identified user?
 	"""
@@ -37,15 +28,15 @@ def difference_attack(datasetA: list, datasetB: list):
 
 def main():
 	if len(sys.argv) != 3:
-		print(f"Usage: python create_datasets.py <firstnames> <lastnames>")
+		print(f"Usage: python driver.py <dataset A> <dataset B>")
 		sys.exit()
 
-	firstnames_path = Path(sys.argv[1])
-	lastnames_path = Path(sys.argv[2])
+	datasetA = Path(sys.argv[1])
+	datasetB = Path(sys.argv[2])
 
-	datasetA, datasetB = read_from_csv(firstnames_path, lastnames_path)
+	A, B = read_from_csv(datasetA, datasetB)
 
-	difference_attack(datasetA, datasetB)
+	difference_attack(A, B)
 
 
 if __name__ == "__main__":
