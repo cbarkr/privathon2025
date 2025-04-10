@@ -3,14 +3,16 @@
 - For each record, they store the following information:
 	1. First name
 	2. Last name
-	3. Age
-	4. Sex
-	5. Vote
+	3. City
+	4. Age
+	5. Sex
+	6. Vote
+- In their analysis, they hope to find a correlation between age, sex, city, and vote
 - Oxford Analytica supposedly cares about privacy, and they've heard about [k-anonymity](https://en.wikipedia.org/wiki/K-anonymity), so they try to anonymize the data like so:
 	1. Suppress identifiers (first name, last name) by hashing them with SHA-256
 	2. Generalize quasi-identifiers (age) by rounding to the nearest 5
 	3. Leaving the sensitive information (vote) untouched since this is necessary for their analysis
-- Further suppose that you are a data analyst who has obtained 2 sequential releases of the data, A and B
+- Further suppose that you are a data analyst who has obtained 2 sequential releases of the data, [A](datasets/A.csv) and [B](datasets/B.csv)
 ## Tasks
 ### Task 1: Not So Differentially Private
 > [!note]
@@ -18,14 +20,15 @@
 > 
 > These wordlists were adapted from [philipperemy's `name-dataset`](https://github.com/philipperemy/name-dataset)
 
-- Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Bouhala الصول
+- Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Joaquim Nuno Chenyi
 - [`driver.py`](utils/driver.py) handles parsing the CSV for you
 - Who is their vote for?
 ### Task 2: Hash Cracking
 - Suppose we want to identify the name of the youngest individual in the dataset who voted "Red"
 - Crack the hashes for their first and last name using Hashcat
 - What is their full name?
-
+### Task 3: When less is more
+- How can you correctly anonymize the dataset?
 # Tools
 - [Hashcat](https://hashcat.net/hashcat/)
 ## Install
