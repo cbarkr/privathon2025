@@ -12,13 +12,23 @@ def generate_entries(firstnames: Path, lastnames: Path, cities: Path):
 	datasetA = []
 	datasetB = []
 
+	with open(firstnames) as f:
+                first = f.readlines()
+
+        with open(lastnames) as f:
+                last = f.readlines()
+
+	with open(cities) as f:
+		c = f.readlines()
+
+
 	for i in range(NUM_ENTRIES+1):
 		# IDs
-		firstname = sha256(random.choice(open(firstnames).readlines()).strip().encode("utf-8")).hexdigest()
-		lastname = sha256(random.choice(open(lastnames).readlines()).strip().encode("utf-8")).hexdigest()
+		firstname = sha256(random.choice(first).strip().encode("utf-8")).hexdigest()
+		lastname = sha256(random.choice(last).strip().encode("utf-8")).hexdigest()
 
 		# QIDs
-		city = random.choice(open(cities).readlines()).strip()
+		city = random.choice(c).strip()
 		age = int(5 * round(random.randint(18, 100) / 5)) # Rounded to nearest 5
 		sex = random.choice(["Male", "Female"])
 
