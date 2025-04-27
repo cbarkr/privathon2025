@@ -58,7 +58,9 @@ See [Tools](#tools)
 	3. Leaving the sensitive information (vote) untouched since this is necessary for their analysis
 - Further suppose that you are a data analyst who has obtained 2 sequential releases of the data, [A](datasets/A.csv) and [B](datasets/B.csv)
 ## Tasks
-### Task 1: Not So Differentially Private
+- Write all solutions in [`driver.py`](utils/driver.py)
+	- This script handles parsing the datasets and other setup for you!!!
+### Task 1: Background Knowledge / Differencing Attack
 > [!note]
 > Names are generated at random from the wordlists, [`first_names.txt`](wordlists/first_names.txt) and [`last_names.txt`](wordlists/last_names.txt), which were obtained from the 2021 Facebook data leak of 533M users
 > 
@@ -66,13 +68,24 @@ See [Tools](#tools)
 
 - Suppose that A and B differ by at most one record
 - Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Joaquim Nuno Chenyi
-- [`driver.py`](utils/driver.py) handles parsing the CSV for you
 - Who is their vote for?
-### Task 2: Hash Cracking
+### Task 2: Homogeneity Attack
+- Suppose you know a woman from Burnaby who is included in the dataset
+- Who is her vote for?
+### Task 3: Hash Cracking
 - Suppose we want to identify the name of the youngest individual in the dataset who voted "Red"
 - Crack the hashes for their first and last name using Hashcat
 - What is their full name?
-### Task 3: When Less Is More
+### Task 4: Password Cracking
+> [!note]
+> Hashcat's [mask attack docs](https://hashcat.net/wiki/doku.php?id=mask_attack) may or may not be of some use to you
+
+- Suppose that the individual from task 3 was involved in a data breach by the social media site Fakebook, leaking names and passwords
+- Fakebook's password "strength" requirements dictate that passwords must be at least 10 characters and contain at least one number and special character
+- Also suppose that the individual, like most people, meets only the minimum password requirements in a predictable way: <word><number(s)><special-character>
+- Using [`rockyou.txt`](wordlists/rockyou.txt) (a common password wordlist) and Hashcat, crack the password
+- What is their password in plaintext?
+### Task 5: Anonymization
 - How can you correctly anonymize the dataset?
 # Tools
 - [Hashcat](https://hashcat.net/hashcat/)
