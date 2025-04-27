@@ -35,8 +35,8 @@ def task2(B: list) -> str:
 	"""
 	Task 2: Homogeneity Attack
 
-	- Suppose you know a woman from Burnaby who is included in the dataset
-	- Who is her vote for? Return the vote as a string
+	- Suppose you know a female from Burnaby who is included in the dataset
+	- Who is their vote for? Return the vote as a string
 	"""
 	# TODO: Implement!
 	...
@@ -46,7 +46,7 @@ def task3(B: list) -> tuple[str, str]:
 	"""
 	Task 3: Hash Cracking
 
-	- Suppose we want to identify the name of the youngest individual in the dataset who voted "Red"
+	- Suppose we want to identify the name of the youngest female in the dataset who voted "Red"
 	- Return the hashes of their first and last name as a tuple (firstname, lastname)
 	- Then, crack the hashes using Hashcat and the name wordlists in `wordlists`
 	"""
@@ -58,9 +58,9 @@ def task4(passwords: list) -> str:
 	"""
 	Task 4: Password Cracking
 
-	- Suppose that the individual from task 3 was involved in a data breach by the social media site Fakebook, leaking names and PBKDF2-hashed passwords
-	- Fakebook's password "strength" requirements dictate that passwords must be at least 10 characters and contain at least one number and special character
-	- Also suppose that the individual, like most people, meets only the minimum password requirements in a predictable way: <word><number><special-characte>
+	- Suppose that the individual from task 3 was involved in a data breach by the social media site Fakebook, leaking names and passwords hashed with PBKDF2-HMAC-SHA256
+	- Fakebook's password "strength" requirements dictate that passwords must be at least 10 characters and contain at least one number and one special character
+	- Also suppose that the individual, like most people, meets only the minimum password requirements in a predictable way: <word><number><special-character>
 	- Return the individual's password hash as a string
 	- Then, crack the hash using Hashcat and the password wordlist (`rockyou.txt`) in `wordlists`
 	"""
