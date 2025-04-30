@@ -4,6 +4,7 @@
 3. [Scenario](#scenario)
 4. [Tasks](#tasks)
 5. [Tools](#tools)
+6. [Credits](#credits)
 
 ---
 # Learning Objectives
@@ -75,11 +76,6 @@ See [Tools](#tools)
 - Write all solutions in [`driver.py`](utils/driver.py)
 	- This script handles parsing the datasets and other setup for you!!!
 ## Task 1: Background Knowledge / Differencing Attack
-> [!note]
-> Names are generated at random from the wordlists, [`first_names.txt`](wordlists/first_names.txt) and [`last_names.txt`](wordlists/last_names.txt), which were obtained from the 2021 Facebook data leak of 533M users
-> 
-> These wordlists were adapted from [philipperemy's `name-dataset`](https://github.com/philipperemy/name-dataset)
-
 - Suppose that A and B differ by at most one record
 - Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Joaquim Nuno Chenyi
 - Who is their vote for?
@@ -134,3 +130,9 @@ sudo dnf install hashcat
 ```
 #### Arch
 If you use Arch (btw), you don't need me to tell you
+
+---
+# Credits
+- Name wordlists ([`first_names.txt`](wordlists/first_names.txt) and [`last_names.txt`](wordlists/last_names.txt)): Adapted from [philipperemy's `name-dataset`](https://github.com/philipperemy/name-dataset), which was obtained from the 2021 Facebook data leak of 533M users
+- Cities wordlist ([`canadian_cities.txt`](wordlists/canadian_cities.txt)): Adapted from [Wikipedia](https://en.wikipedia.org/wiki/List_of_cities_in_Canada)
+- RockYou wordlist ([`rockyou.txt`](wordlists/rockyou.txt)): Adapted from [Weakpass](https://weakpass.com/wordlists/rockyou.txt), obtained from the 2009 RockYou data breach of 32M plaintext passwords
