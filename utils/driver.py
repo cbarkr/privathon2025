@@ -3,6 +3,10 @@ import csv
 from pathlib import Path
 
 
+################
+# START: Utils #
+################
+
 def read_from_csv(path: Path) -> list[tuple]:
 	"""
 	Reads CSV file into a list of tuples *including the header*
@@ -17,6 +21,23 @@ def read_datasets(datasetA: Path, datasetB: Path, datasetC: Path) -> tuple:
         C = read_from_csv(datasetC)
 
         return A, B, C
+
+
+def write_dataset(dataset: list, dest: Path):
+        with open(dest, "w") as csvfile:
+                writer = csv.writer(csvfile, delimiter=",")
+
+                for row in dataset:
+                        writer.writerow(row)
+
+##############
+# END: Utils #
+##############
+
+
+################
+# START: Tasks #
+################
 
 
 def task1(A: list, B: list) -> str:
@@ -79,6 +100,11 @@ def task5(B: list) -> list:
 	# TODO: Implement!
 
 
+##############
+# END: Tasks #
+##############
+
+
 def main():
 	if len(sys.argv) != 4:
 		print(f"Usage: python driver.py <dataset A> <dataset B> <password dataset>")
@@ -86,20 +112,22 @@ def main():
 
 	A, B, passwords = read_datasets(Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3]))
 
-	task1 = task1(A, B)
-	print(f"task 1: {task1}")
+	task1_res = task1(A, B)
+	print(f"task 1: {task1_res}")
 
-	task2 = task2(B)
-	print(f"task 2: {task2}")
+	task2_res = task2(B)
+	print(f"task 2: {task2_res}")
 
-	task3 = task3(B)
-	print(f"task 3: {task3}")
+	task3_res = task3(B)
+	print(f"task 3: {task3_res}")
 
-	task4 = task4(passwords)
-	print(f"task 4: {task4}")
+	task4_res = task4(passwords)
+	print(f"task 4: {task4_res}")
 
-	task5 = task5(B)
-	print(f"task 5: {task5}")
+	task5_res = task5(B)
+	print(f"task 5: {task5_res}")
+
+        write_dataset(task5_res, Path("./task5.csv"))
 
 
 if __name__ == "__main__":
