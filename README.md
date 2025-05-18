@@ -1,58 +1,41 @@
 # Table of Contents
-1. [Learning Objectives](#learning-objectives) 
-2. [Background](#background)
-3. [Scenario](#scenario)
-4. [Tasks](#tasks)
-5. [Tools](#tools)
-6. [Credits](#credits)
+1. [Tools](#tools)
+2. [Scenario](#scenario)
+3. [Tasks](#tasks)
+4. [Credits](#credits)
 
 ---
-# Learning Objectives
-By the end of this workshop, you should be able to:
-1. Describe (cryptographic) hash functions and their properties
-2. Use Hashcat to crack hashes
-3. Define k-anonymity, as well as identify its strengths and weaknesses
-4. Apply your understanding of hashes to create secure passwords!
+# Tools
+- [Hashcat](https://hashcat.net/hashcat/)
+## Install
+### Windows
 
----
-# Background
-## Hash Functions
-> A function that maps data of arbitrary size to fixed-size values
-### Properties of Cryptographic Hash Functions
-1. Pre-image Resistance: Given the output, it is hard to get the original input (i.e. given $hash(m_1)$, it is hard to find $m_1$)
-2. Second Pre-image Resistance: Given one input, it is hard to find another input that produces the same output (i.e. given $m_1$, it is hard to find another $m_2$ such that $m_1 \neq m_2$ and hash($m_1$) = hash($m_2$))
-3. Collision Resistance: It is hard to find two inputs that produce the same output (i.e. it is hard to find $m_1$ and $m_2$ such that $m_1 \neq m_2$ and hash($m_1$) = hash($m_2$))
-> [!note]
-> Second pre-image resistance and collision resistance differ slightly:
-> - Second Pre-image Resistance: Attacker is given a particular message $m_1$
-> - Collision Resistance: Attacker can freely choose both messages $m_1$ and $m_2$
+| Step | Program | Install Link                                          |
+| ---- | ------- | ----------------------------------------------------- |
+| 1    | 7zip    | [install](https://www.7-zip.org/a/7z2409-x64.exe)     |
+| 2    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z) |
+### Mac
+#### Method 1: Homebrew
+```bash
+brew install hashcat
+```
+#### Method 2: Executable Installers
 
-## Hashcat
-> An open-source hash-cracking tool
-
-See [Tools](#tools)
-## K-anonymity
-> A property possessed by certain anonymized data
-> A release of data is said to have the k-anonymity property if the information for each person contained in the release cannot be distinguished from at least $k − 1$ individuals whose information also appear in the release
-### Data Types
-1. Identifiers (IDs): A piece of information that uniquely identifies a record (e.g. name, serial number, UUID)
-2. Quasi-identifiers (QIDs): Pieces of information that are not of themselves unique identifiers, but are sufficiently well correlated with an entity that they can be combined with other QIDs to create a unique identifier (e.g. gender, birth date, postal code, job title)
-3. Sensitive Values: Information that is of interest for research purposes (e.g. disease, salary, interests, political affiliation, transactions)
-### Anonymity Set
-> The subset of rows in dataset $D$ that share the same **QIDs** (but not necessarily the same sensitive attributes or identifiers)
-### Property
-> $D_k$ satisfies $k$-anonymity if every anonymity set consists of at least $k$ elements.
-### Anonymization Methods
-1. Suppression: Remove data outright (e.g. remove column from data or replace data with NULL, etc.); applied to IDs
-2. Generalization: Replace individual values of attributes with a broader category (e.g. round integers, broaden location to a larger region); applied to QIDs
-### Strengths
-1. Can hide QIDs without making the data useless
-### Cons
-1. Introduces noise to the data
-2. May still leak information!
-### Attacks
-1. Homogeneity Attack: Suppose all members of an anonymity set have the same sensitive value; any person in the anonymity set (i.e. possessing the relevant QIDS) is known to have a certain sensitive value
-2. Background Knowledge Attack: Leverages an association between one or more QIDs with the sensitive attribute to reduce the set of possible values for the sensitive attribute
+| Step | Program | Install Link                                          |
+| ---- | ------- | ----------------------------------------------------- |
+| 1    | 7zip    | [install](https://7-zip.org/a/7z2409-mac.tar.xz)      |
+| 2    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z) |
+### Linux
+#### Ubuntu/Debian/Mint
+```bash
+sudo apt install hashcat
+```
+#### Fedora/RHEL
+```bash
+sudo dnf install hashcat
+```
+#### Arch
+If you use Arch (btw), you don't need me to tell you
 
 ---
 # Scenario
@@ -90,46 +73,13 @@ See [Tools](#tools)
 > [!note]
 > Hashcat's [hybrid attack](https://hashcat.net/wiki/doku.php?id=hybrid_attack) and [mask attack](https://hashcat.net/wiki/doku.php?id=mask_attack) docs may or may not be of some use to you
 
-- Suppose that the individual from task 3 was involved in a data breach by the social media site Fakebook, leaking names and passwords hashed with  PBKDF2-HMAC-SHA256
+- Suppose that the individual from task 3 was involved in a data breach by the social media site "Fakebook", leaking names and passwords hashed with  PBKDF2-HMAC-SHA256
 - Fakebook's password "strength" requirements dictate that passwords must be at least 10 characters and contain at least one number and special character
-- Also suppose that the individual, like most people, meets only the minimum password requirements in a predictable way: <word><number(s)><special-character>
+- Also suppose that the individual, like most people, meets only the minimum password requirements in a predictable way: `<word><number(s)><special-character>`
 - Using [`rockyou.txt`](wordlists/rockyou.txt) (a common password wordlist) and Hashcat, crack the password
 - What is their password in plaintext?
 ## Task 5: Anonymization
 - How can you correctly anonymize the dataset?
-
----
-# Tools
-- [Hashcat](https://hashcat.net/hashcat/)
-## Install
-### Windows
-
-| Step | Program | Install Link                                          |
-| ---- | ------- | ----------------------------------------------------- |
-| 1    | 7zip    | [install](https://www.7-zip.org/a/7z2409-x64.exe)     |
-| 2    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z) |
-### Mac
-#### Method 1: Homebrew
-```bash
-brew install hashcat
-```
-#### Method 2: Executable Installers
-
-| Step | Program | Install Link                                          |
-| ---- | ------- | ----------------------------------------------------- |
-| 1    | 7zip    | [install](https://7-zip.org/a/7z2409-mac.tar.xz)      |
-| 2    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z) |
-### Linux
-#### Ubuntu/Debian/Mint
-```bash
-sudo apt install hashcat
-```
-#### Fedora/RHEL
-```bash
-sudo dnf install hashcat
-```
-#### Arch
-If you use Arch (btw), you don't need me to tell you
 
 ---
 # Credits
