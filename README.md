@@ -10,10 +10,11 @@
 ## Install
 ### Windows
 
-| Step | Program | Install Link                                          |
-| ---- | ------- | ----------------------------------------------------- |
-| 1    | 7zip    | [install](https://www.7-zip.org/a/7z2409-x64.exe)     |
-| 2    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z) |
+| Step | Program | Install Link                                                                                        |
+| ---- | ------- | --------------------------------------------------------------------------------------------------- |
+| 1    | Python  | [install](https://www.pythontutorial.net/getting-started/install-python/#install-python-on-windows) |
+| 2    | 7zip    | [install](https://www.7-zip.org/a/7z2409-x64.exe)                                                   |
+| 3    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z)                                               |
 ### Mac
 #### Method 1: Homebrew
 ```bash
@@ -21,10 +22,11 @@ brew install hashcat
 ```
 #### Method 2: Executable Installers
 
-| Step | Program | Install Link                                          |
-| ---- | ------- | ----------------------------------------------------- |
-| 1    | 7zip    | [install](https://7-zip.org/a/7z2409-mac.tar.xz)      |
-| 2    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z) |
+| Step | Program | Install Link                                                                                      |
+| ---- | ------- | ------------------------------------------------------------------------------------------------- |
+| 1    | Python  | [install](https://www.pythontutorial.net/getting-started/install-python/#install-python-on-macos) |
+| 2    | 7zip    | [install](https://7-zip.org/a/7z2409-mac.tar.xz)                                                  |
+| 3    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z)                                             |
 ### Linux
 #### Ubuntu/Debian/Mint
 ```bash
