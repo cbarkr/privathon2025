@@ -1,4 +1,16 @@
-![|2000](media/intro.png)
+```bash[1-3|5-6|8-12]
+[~] $ whatis this-workshop
+this-workshop (1) - Hash cracking and de-anonymization
+					for fun and profit
+
+[~] $ whoami
+Callum Barker
+
+[~] $ cat bio.txt
+Callum is a Compututing Science student @ SFU,
+member of the SFU Cybersecurity Club and CTF team &&
+an Information Security Engineer @ Ascinta Technologies
+```
 
 ---
 
@@ -60,19 +72,20 @@ notes:
 --
 
 #### 2.1.1. Properties of All Hash Functions
-1. Determinism
+1. Determinism (same input always produces the same output)
 2. Fixed-length output
-3. Sensitivity
-
-notes: 
-- By determinism, I mean that the same input always produces the same output
-- By sensitivity, I mean that a small change in the input produces a large change in the output
+3. Sensitivity (small change in input produces large change in the output)
 
 --
 
 > [!error] Problems
 > 1. What if, given a hash, we shouldn't be able to identify its input?
 > 2. What if we want *all* of our hashes to be unique?
+
+--
+
+> [!success] Solution
+> This is where *cryptographic* hash functions come into play
 
 --
 
@@ -126,8 +139,8 @@ notes: You don't need to remember these, though I thought some people might be i
 
 --
 
-#### 2.1.5. Thwarting Rainbow Tables With Salting
-> Add a random string to the message before hashing to make identical messages have different hashes
+#### 2.1.5. Salting
+> Add a random string to the message before hashing to make identical messages result in unique hashes
 
 --
 
@@ -136,6 +149,11 @@ notes: You don't need to remember these, though I thought some people might be i
 --
 
 ![](media/salted_hash2.jpg)
+
+--
+
+> [!important]
+> Salt can be stored alongside the hash without compromising security!
 
 --
 
@@ -160,11 +178,11 @@ where:
 
 --
 
-### 2.2. Passwords
-- Passwords *should be* stored in hashed form
-	- Hashing is a one-way function, it is impossible to "decrypt"
-- Hashing functions should have a **high work factor** (i.e. computational cost)
-	- Reduces an attacker's cracking speed and/or increases their cost
+### 2.2. Passwords [^nist80063b]
+- *Should be* stored in salted and hashed form
+- *Should be* hashed using an algorithm with a **high work factor** (i.e. computational cost)
+
+[^nist80063b]: https://pages.nist.gov/800-63-4/sp800-63b.html
 
 notes: 
 - Q: Have you guys heard of MD5? If so, can anyone tell me the main reason that it's bad for passwords? 
@@ -172,17 +190,12 @@ notes:
 
 --
 
-#### 2.2.1. Storage
-![](media/hash_flow.png)
-
---
-
-#### 2.2.2. Traditional Passwords and The Human Aspect
+#### 2.2.1. *Traditional* Passwords and The Human Aspect
 ![|800](media/memory_vs_crackability.png)
 
 --
 
-#### 2.2.3. Passphrases
+#### 2.2.2. Passphrases
 > A sequence of words used as a password
 
 --
@@ -195,20 +208,20 @@ notes:
 
 --
 
-#### 2.2.4. Passwords vs Passphrases
+#### 2.2.3. Passwords vs Passphrases
 
-|                | Passwords                       | Passphrases                                           |
-| -------------- | ------------------------------- | ----------------------------------------------------- |
-| **Storage**    | 🔐 Password manager             | 🧠 Brain                                              |
-| **Use**        | When password manager available | When password manager unavailable                     |
-| **Examples**   | Passwords for online services   | Keys for password manager vault, full-disk encryption |
+|              | Passphrases                                           | Passwords                     |
+| ------------ | ----------------------------------------------------- | ----------------------------- |
+| **Storage**  | 🧠 Brain                                              | 🔐 Password manager           |
+| **Use**      | Password manager unavailable                          | Password manager available    |
+| **Examples** | Keys for password manager vault, full-disk encryption | Passwords for online services |
 
 --
 
-#### 2.2.5. In Any Case...
+#### 2.2.4. In Any Case...
 Enable multi-factor authentication (MFA) and your password strength doesn't really matter [^microsoft]
 
-(but please do use strong passwords and password managers)
+(but please do use strong passwords/phrases and password managers regardless)
 
 [^microsoft]: https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Your-Pa-word-doesn-t-matter/ba-p/731984
 
@@ -230,7 +243,13 @@ Enable multi-factor authentication (MFA) and your password strength doesn't real
 --
 
 #### 2.3.2. Basic Examples
-![](media/hashcat--help.png)
+
+```bash [1|3|4]
+ Attack-Mode | Hash-Type | Example command
+=============+===========+=============================================
+ Wordlist    | MD5       | hashcat -a 0 -m 0 example0.hash example.dict
+ Brute-Force | MD5       | hashcat -a 3 -m 0 example0.hash ?a?a?a?a?a?a
+```
 
 --
 
