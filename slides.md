@@ -449,7 +449,10 @@ notes: Vote untouched since this is the sensitive data in which they're interest
 ---
 
 ### 5. Review
-(Nice try but I'm not including the solutions just yet)
+1. Orange
+2. Blue
+3. Esme Lavigne
+4. ilovecats7!
 
 ---
 
