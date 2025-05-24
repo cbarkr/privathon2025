@@ -14,6 +14,15 @@ an Information Security Engineer @ Ascinta Technologies
 
 ---
 
+## Why Should You Care?
+Hash functions are the backbone of:
+- Protecting passwords
+- Ensuring the integrity of messages and files
+- (Some) database optimizations
+- Everyone's favourite data structure, hash tables
+
+---
+
 ## Table of Contents
 1. Learning Objectives
 2. Background
@@ -340,7 +349,8 @@ notes:
 
 #### 3.1. Workshop Files
 1. Visit https://github.com/cbarkr/privathon2025
-2. Either :
+2. Click the green "<> Code" button
+3. Either :
 	1. `git clone` the repo
 	2. Download it as a zip file
 
@@ -349,10 +359,10 @@ notes:
 --
 
 #### 3.2. Install tools
-| Method      | Windows                                                                                                           | Mac                                                                                                              | Linux                                    |
-| ----------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| Interactive | Install [7zip](https://www.7-zip.org/a/7z2409-x64.exe) then [Hashcat](https://hashcat.net/files/hashcat-6.2.6.7z) | Install [7zip](https://7-zip.org/a/7z2409-mac.tar.xz) then [Hashcat](https://hashcat.net/files/hashcat-6.2.6.7z) |                                          |
-| CLI         |                                                                                                                   | `brew install hashcat`                                                                                           | `sudo <package-manager> install hashcat` |
+| Method      | Windows                                                                                                                                                                                                                 | Mac                                                                                                                                                                                                                  | Linux                                    |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| Interactive | 1. [Python](https://www.pythontutorial.net/getting-started/install-python/#install-python-on-windows)<br>2. [7zip](https://www.7-zip.org/a/7z2409-x64.exe) <br>3. [Hashcat](https://hashcat.net/files/hashcat-6.2.6.7z) | 1. [Python](https://www.pythontutorial.net/getting-started/install-python/#install-python-on-macos)<br>2. [7zip](https://7-zip.org/a/7z2409-mac.tar.xz) <br>3. [Hashcat](https://hashcat.net/files/hashcat-6.2.6.7z) |                                          |
+| CLI         |                                                                                                                                                                                                                         | `brew install hashcat`                                                                                                                                                                                               | `sudo <package-manager> install hashcat` |
 
 ---
 
