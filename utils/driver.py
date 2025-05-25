@@ -12,7 +12,7 @@ def read_from_csv(path: Path) -> list[tuple]:
     """
     Reads CSV file into a list of tuples *including the header*
     """
-    with open(path) as csvfile:
+    with open(path, encoding="utf-8") as csvfile:
         return [tuple(row) for row in csv.reader(csvfile, delimiter=",")]
 
 
@@ -25,7 +25,7 @@ def read_datasets(datasetA: Path, datasetB: Path, datasetC: Path) -> tuple:
 
 
 def write_dataset(dataset: list, dest: Path):
-    with open(dest, "w") as csvfile:
+    with open(dest, "w", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
 
         for row in dataset:
