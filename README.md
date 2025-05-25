@@ -1,46 +1,51 @@
-# Table of Contents
+# Hash-cracking and de-anonymization for fun and profit
+
+What does a dish of chopped potatoes have in common with passwords? Hashing and salting! In this workshop, learn the basics of hash functions, how to crack hashes using Hashcat, and how to prevent yours from being cracked. In the process, we'll discuss techniques for anonymizing data and simple de-anonymization methods.
+
+---
+## Table of Contents
 1. [Tools](#tools)
 2. [Scenario](#scenario)
 3. [Tasks](#tasks)
 4. [Credits](#credits)
 
 ---
-# Tools
+## Tools
 - [Hashcat](https://hashcat.net/hashcat/)
-## Install
-### Windows
+### Install
+#### Windows
 
 | Step | Program | Install Link                                                                                        |
 | ---- | ------- | --------------------------------------------------------------------------------------------------- |
 | 1    | Python  | [install](https://www.pythontutorial.net/getting-started/install-python/#install-python-on-windows) |
 | 2    | 7zip    | [install](https://www.7-zip.org/a/7z2409-x64.exe)                                                   |
 | 3    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z)                                               |
-### Mac
-#### Method 1: Homebrew
+#### Mac
+##### Method 1: Homebrew
 ```bash
 brew install hashcat
 ```
-#### Method 2: Executable Installers
+##### Method 2: Executable Installers
 
 | Step | Program | Install Link                                                                                      |
 | ---- | ------- | ------------------------------------------------------------------------------------------------- |
 | 1    | Python  | [install](https://www.pythontutorial.net/getting-started/install-python/#install-python-on-macos) |
 | 2    | 7zip    | [install](https://7-zip.org/a/7z2409-mac.tar.xz)                                                  |
 | 3    | hashcat | [install](https://hashcat.net/files/hashcat-6.2.6.7z)                                             |
-### Linux
-#### Ubuntu/Debian/Mint
+#### Linux
+##### Ubuntu/Debian/Mint
 ```bash
 sudo apt install hashcat
 ```
-#### Fedora/RHEL
+##### Fedora/RHEL
 ```bash
 sudo dnf install hashcat
 ```
-#### Arch
+##### Arch
 If you use Arch (btw), you don't need me to tell you
 
 ---
-# Scenario
+## Scenario
 - Suppose that a small marketing firm (let's call them "Oxford Analytica") has collected data on political affiliations
 - For each record, they store the following information:
 	1. First name
@@ -57,21 +62,22 @@ If you use Arch (btw), you don't need me to tell you
 - Further suppose that you are a data analyst who has obtained 2 sequential releases of the data, [A](datasets/A.csv) and [B](datasets/B.csv)
 
 ---
-# Tasks
+## Tasks
 - Write all solutions in [`driver.py`](utils/driver.py)
 	- This script handles parsing the datasets and other setup for you!!!
-## Task 1: Background Knowledge / Differencing Attack
+	- *Pass as parameters the datasets [A](datasets/A.csv), [B](datasets/B.csv), and [passwords](datasets/passwords.csv)*
+### Task 1: Background Knowledge / Differencing Attack
 - Suppose that A and B differ by at most one record
 - Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Joaquim Nuno Chenyi
 - Who is their vote for?
-## Task 2: Homogeneity Attack
+### Task 2: Homogeneity Attack
 - Suppose you know a female from Burnaby who is included in the dataset
 - Who is their vote for?
-## Task 3: Hash Cracking
+### Task 3: Hash Cracking
 - Suppose we want to identify the name of the youngest female in the dataset who voted "Red"
 - Crack the hashes for their first and last name using Hashcat
 - What is their full name?
-## Task 4: Password Cracking
+### Task 4: Password Cracking
 > [!note]
 > Hashcat's [hybrid attack](https://hashcat.net/wiki/doku.php?id=hybrid_attack) and [mask attack](https://hashcat.net/wiki/doku.php?id=mask_attack) docs may or may not be of some use to you
 
@@ -80,11 +86,12 @@ If you use Arch (btw), you don't need me to tell you
 - Also suppose that the individual, like most people, meets only the minimum password requirements in a predictable way: `<word><number(s)><special-character>`
 - Using [`rockyou.txt`](wordlists/rockyou.txt) (a common password wordlist) and Hashcat, crack the password
 - What is their password in plaintext?
-## Task 5: Anonymization
+### Task 5: Anonymization
 - How can you correctly anonymize the dataset?
 
 ---
-# Credits
+## Credits
 - Name wordlists ([`first_names.txt`](wordlists/first_names.txt) and [`last_names.txt`](wordlists/last_names.txt)): Adapted from [philipperemy's `name-dataset`](https://github.com/philipperemy/name-dataset), which was obtained from the 2021 Facebook data leak of 533M users
 - Cities wordlist ([`canadian_cities.txt`](wordlists/canadian_cities.txt)): Adapted from [Wikipedia](https://en.wikipedia.org/wiki/List_of_cities_in_Canada)
 - RockYou wordlist ([`rockyou.txt`](wordlists/rockyou.txt)): Adapted from [Weakpass](https://weakpass.com/wordlists/rockyou.txt), obtained from the 2009 RockYou data breach of 32M plaintext passwords
+- Presentation tool: [Advanced Slides](https://mszturc.github.io/obsidian-advanced-slides/) for Obsidian
