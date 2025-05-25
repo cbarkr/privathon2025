@@ -66,6 +66,7 @@ If you use Arch (btw), you don't need me to tell you
 - Write all solutions in [`driver.py`](utils/driver.py)
 	- This script handles parsing the datasets and other setup for you!!!
 	- *Pass as parameters the datasets [A](datasets/A.csv), [B](datasets/B.csv), and [passwords](datasets/passwords.csv)*
+		- E.g. From the project root directory, run `python utils/driver.py datasets/A.csv datasets/B.csv datasets/passwords.csv`
 ### Task 1: Background Knowledge / Differencing Attack
 - Suppose that A and B differ by at most one record
 - Assume, by some insider knowledge, you happen to learn the name of the last person to be added to the dataset: Joaquim Nuno Chenyi
