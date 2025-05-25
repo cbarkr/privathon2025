@@ -1,0 +1,151 @@
+H(firstname),H(lastname),city,age,sex,vote
+********,********,Hamilton,60,Male,Red
+********,********,Hamilton,60,Male,Orange
+********,********,Sarnia,50,Female,Green
+********,********,Sarnia,50,Female,Orange
+********,********,Bathurst,60,Female,Purple
+********,********,Bathurst,60,Female,Orange
+********,********,Iqaluit,80,Male,Orange
+********,********,Iqaluit,80,Male,Orange
+********,********,Iqaluit,80,Male,Green
+********,********,Disraeli,30,Female,Blue
+********,********,Disraeli,30,Female,Orange
+********,********,Saint-Constant,40,Male,Green
+********,********,Saint-Constant,40,Male,Purple
+********,********,Lac-Saint-Joseph,80,Female,Red
+********,********,Lac-Saint-Joseph,80,Female,Orange
+********,********,Cap-Chat,80,Male,Blue
+********,********,Cap-Chat,80,Male,Purple
+********,********,Lac-Sergent,40,Female,Green
+********,********,Lac-Sergent,40,Female,Red
+********,********,Saint-Eustache,60,Male,Blue
+********,********,Saint-Eustache,60,Male,Red
+********,********,Saint-Basile,40,Female,Orange
+********,********,Saint-Basile,40,Female,Blue
+********,********,Peterborough,30,Male,Blue
+********,********,Peterborough,30,Male,Orange
+********,********,Saint-Pie,60,Male,Orange
+********,********,Saint-Pie,60,Male,Orange
+********,********,Woodstock,40,Female,Green
+********,********,Woodstock,40,Female,Orange
+********,********,McMasterville,80,Female,Green
+********,********,McMasterville,80,Female,Purple
+********,********,McMasterville,80,Female,Red
+********,********,Thurso,70,Female,Blue
+********,********,Thurso,70,Female,Green
+********,********,Longueuil,80,Male,Green
+********,********,Longueuil,80,Male,Blue
+********,********,Mirabel,60,Male,Blue
+********,********,Mirabel,60,Male,Blue
+********,********,Saint-Eustache,80,Male,Red
+********,********,Saint-Eustache,80,Male,Orange
+********,********,Edmundston,80,Male,Blue
+********,********,Edmundston,80,Male,Orange
+********,********,Edmundston,80,Male,Purple
+********,********,Stratford,20,Male,Blue
+********,********,Stratford,20,Male,Purple
+********,********,Stratford,20,Male,Orange
+********,********,Humboldt,80,Male,Red
+********,********,Humboldt,80,Male,Green
+********,********,Thurso,100,Male,Red
+********,********,Thurso,100,Male,Red
+********,********,Laval,20,Male,Orange
+********,********,Laval,20,Male,Purple
+********,********,Terrebonne,80,Female,Blue
+********,********,Terrebonne,80,Female,Green
+********,********,Lac-Brome,40,Female,Blue
+********,********,Lac-Brome,40,Female,Green
+********,********,Swift Current,20,Female,Blue
+********,********,Swift Current,20,Female,Orange
+********,********,Scotstown,20,Male,Red
+********,********,Scotstown,20,Male,Green
+********,********,Saint-Charles-Borromée,50,Female,Orange
+********,********,Saint-Charles-Borromée,50,Female,Blue
+********,********,Airdrie,80,Male,Blue
+********,********,Airdrie,80,Male,Blue
+********,********,Forestville,60,Male,Orange
+********,********,Forestville,60,Male,Red
+********,********,Kimberley,100,Male,Red
+********,********,Kimberley,100,Male,Red
+********,********,Sainte-Anne-des-Monts,60,Male,Orange
+********,********,Sainte-Anne-des-Monts,60,Male,Orange
+********,********,Richelieu,80,Female,Orange
+********,********,Richelieu,80,Female,Blue
+********,********,Montmagny,40,Female,Purple
+********,********,Montmagny,40,Female,Green
+********,********,Saint-Philippe,30,Female,Orange
+********,********,Saint-Philippe,30,Female,Purple
+********,********,Richmond Hill,80,Male,Green
+********,********,Richmond Hill,80,Male,Purple
+********,********,Dauphin,80,Female,Blue
+********,********,Dauphin,80,Female,Blue
+********,********,Dauphin,80,Female,Red
+********,********,Edmundston,90,Female,Green
+********,********,Edmundston,90,Female,Purple
+********,********,Elliot Lake,20,Female,Orange
+********,********,Elliot Lake,20,Female,Green
+********,********,Wetaskiwin,80,Male,Blue
+********,********,Wetaskiwin,80,Male,Blue
+********,********,Matane,60,Male,Blue
+********,********,Matane,60,Male,Blue
+********,********,Témiscouata-sur-le-Lac,60,Male,Red
+********,********,Témiscouata-sur-le-Lac,60,Male,Purple
+********,********,Thunder Bay,40,Female,Green
+********,********,Thunder Bay,40,Female,Red
+********,********,Alma,60,Female,Orange
+********,********,Alma,60,Female,Blue
+********,********,Montréal-Ouest,60,Male,Purple
+********,********,Montréal-Ouest,60,Male,Green
+********,********,Chandler,100,Male,Purple
+********,********,Chandler,100,Male,Red
+********,********,L'Épiphanie,80,Male,Purple
+********,********,L'Épiphanie,80,Male,Red
+********,********,Guelph,60,Male,Blue
+********,********,Guelph,60,Male,Red
+********,********,Guelph,60,Male,Blue
+********,********,Brooks,80,Male,Red
+********,********,Brooks,80,Male,Blue
+********,********,L'Assomption,40,Male,Blue
+********,********,L'Assomption,40,Male,Red
+********,********,Port-Cartier,60,Female,Orange
+********,********,Port-Cartier,60,Female,Green
+********,********,Moncton,80,Male,Green
+********,********,Moncton,80,Male,Blue
+********,********,Pont-Rouge,60,Male,Orange
+********,********,Pont-Rouge,60,Male,Red
+********,********,Edmonton,80,Male,Blue
+********,********,Edmonton,80,Male,Blue
+********,********,Fernie,40,Male,Purple
+********,********,Fernie,40,Male,Red
+********,********,Murdochville,60,Female,Green
+********,********,Murdochville,60,Female,Purple
+********,********,Laval,80,Female,Orange
+********,********,Laval,80,Female,Orange
+********,********,Huntingdon,60,Male,Purple
+********,********,Huntingdon,60,Male,Blue
+********,********,Beaconsfield,60,Female,Green
+********,********,Beaconsfield,60,Female,Green
+********,********,Danville,20,Female,Purple
+********,********,Danville,20,Female,Red
+********,********,North Battleford,90,Male,Blue
+********,********,North Battleford,90,Male,Purple
+********,********,Steinbach,60,Male,Green
+********,********,Steinbach,60,Male,Purple
+********,********,Portage la Prairie,80,Male,Purple
+********,********,Portage la Prairie,80,Male,Orange
+********,********,Sorel-Tracy,60,Female,Green
+********,********,Sorel-Tracy,60,Female,Green
+********,********,Sutton,100,Male,Green
+********,********,Sutton,100,Male,Orange
+********,********,La Tuque,60,Male,Blue
+********,********,La Tuque,60,Male,Green
+********,********,Waterloo,40,Female,Red
+********,********,Waterloo,40,Female,Blue
+********,********,Medicine Hat,80,Male,Blue
+********,********,Medicine Hat,80,Male,Orange
+********,********,Cambridg,40,Male,Blue
+********,********,Cambridg,40,Male,Purple
+********,********,Louiseville,60,Male,Purple
+********,********,Louiseville,60,Male,Red
+********,********,Saint-Augustin-de-Desmaures,20,Female,Green
+********,********,Saint-Augustin-de-Desmaures,20,Female,Red
